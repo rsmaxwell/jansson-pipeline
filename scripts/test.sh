@@ -3,15 +3,15 @@
 
 BASEDIR=$(dirname "$0")
 SCRIPT_DIR=$(cd $BASEDIR && pwd)
-PROJECT_DIR=$(dirname $SCRIPT_DIR)/project
-BUILD_DIR=${PROJECT_DIR}/build
-TEST_DIR=${PROJECT_DIR}/test
-
-rm -rf ${TEST_DIR}
-mkdir -p ${TEST_DIR}
-cd ${TEST_DIR}
+PIPELINE_DIR=$(dirname $SCRIPT_DIR)
+PROJECT_DIR=${PIPELINE_DIR}/project
 
 
 
-${BUILD_DIR}/example-c
+
+cd ${PROJECT_DIR}
+
+
+
+make check
 

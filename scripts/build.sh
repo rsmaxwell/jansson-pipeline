@@ -32,10 +32,12 @@ PROJECT_DIR=${PIPELINE_DIR}/project
 
 
 
+mkdir -p ${PIPELINE_BUILD_DIR}
 cd ${PIPELINE_BUILD_DIR}
-. ./versioninfo
+
 
 cat > machineinfo <<EOL
+PROJECT=jansson
 FAMILY="${FAMILY}"
 ARCHITECTURE="${ARCHITECTURE}"
 EOL
@@ -48,4 +50,12 @@ cat machineinfo
 
 cd ${PROJECT_DIR}
 
+autoupdate
 autoreconf -i
+
+./configure
+
+make
+
+sudo make install
+
