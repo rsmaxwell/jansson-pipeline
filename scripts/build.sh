@@ -50,9 +50,4 @@ cat machineinfo
 
 cd ${PROJECT_BUILD_DIR}
 
-# SOURCE=${PROJECT_DIR}/src/main/c
-# export SOURCE
-
-# make --file ${PROJECT_DIR}/src/main/make/${FAMILY}_${ARCHITECTURE}.makefile $*
-
 autoreconf -i
