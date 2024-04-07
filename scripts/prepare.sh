@@ -34,3 +34,11 @@ EOL
 pwd
 ls -al 
 cat versioninfo
+
+echo
+echo "PIPELINE_DIR: ${PIPELINE_DIR}"
+ls -al ${PIPELINE_DIR}
+echo
+echo "PROJECT_DIR: ${PROJECT_DIR}"
+ls -al ${PROJECT_DIR}
+
