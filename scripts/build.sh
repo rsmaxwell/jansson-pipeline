@@ -48,5 +48,4 @@ cat machineinfo
 
 cd ${PROJECT_DIR}
 
-autoupdate
 autoreconf -i
