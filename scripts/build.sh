@@ -29,7 +29,6 @@ SCRIPT_DIR=$(cd $BASEDIR && pwd)
 PIPELINE_DIR=$(dirname $SCRIPT_DIR)
 PIPELINE_BUILD_DIR=${PIPELINE_DIR}/build
 PROJECT_DIR=${PIPELINE_DIR}/project
-PROJECT_BUILD_DIR=${PROJECT_DIR}/src
 
 
 
@@ -48,6 +47,10 @@ cat machineinfo
 
 
 
-cd ${PROJECT_BUILD_DIR}
+cd ${PROJECT_DIR}
+
+echo "building in: ${PROJECT_DIR}"
+ls -al 
+
 
 autoreconf -i
