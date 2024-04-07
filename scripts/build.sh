@@ -57,5 +57,5 @@ autoreconf -i
 
 make
 
-sudo make install
+# sudo make install
 
