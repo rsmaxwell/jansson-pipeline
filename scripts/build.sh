@@ -35,7 +35,6 @@ PROJECT_DIR=${PIPELINE_DIR}/project
 cd ${PIPELINE_BUILD_DIR}
 . ./versioninfo
 
-
 cat > machineinfo <<EOL
 FAMILY="${FAMILY}"
 ARCHITECTURE="${ARCHITECTURE}"
@@ -49,8 +48,5 @@ cat machineinfo
 
 cd ${PROJECT_DIR}
 
-echo "building in: ${PROJECT_DIR}"
-ls -al 
-
-
+autoupdate
 autoreconf -i
