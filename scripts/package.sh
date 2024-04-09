@@ -73,23 +73,6 @@ ZIPFILE=${ARTIFACTID}_${VERSION}.${PACKAGING}
 
 
 
-if [ -f ${HOME}/.m2/maven-repository-info ]; then
-    . ${HOME}/.m2/maven-repository-info
-elif [ -f ./maven-repository-info ]; then
-    . ./maven-repository-info
-fi
-
-if [ -z "${MAVEN_REPOSITORY_BASE_URL}" ]; then
-    echo "'MAVEN_REPOSITORY_BASE_URL' is not defined"
-    exit 1
-fi
-
-MAVEN_REPOSITORY_URL="${MAVEN_REPOSITORY_BASE_URL}/${REPOSITORY}"
-
-
-
-
-
 
 
 cat <<EOT >> info
@@ -107,10 +90,8 @@ PROJECT="${PROJECT}"
 GROUPID="${GROUPID}"
 FAMILY="${FAMILY}"
 ARCHITECTURE="${ARCHITECTURE}"
-BASE_URL="${BASE_URL}"
 REPOSITORY="${REPOSITORY}"
 REPOSITORYID="${REPOSITORYID}"
-REPOSITORY_URL="${REPOSITORY_URL}"
 EOT
 
 
