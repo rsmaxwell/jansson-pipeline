@@ -43,9 +43,7 @@ spec:
     tty: true
     volumeMounts:
     - mountPath: /home/gradle
-      name: gradle-vol
-
-
+      name: gradle-data
 
   volumes:
   - name: maven-data
@@ -54,6 +52,6 @@ spec:
   - name: golang-data
     persistentVolumeClaim:
       claimName: golang-pvc
-  - name: gradle-vol
+  - name: gradle-data
     persistentVolumeClaim:
       claimName: gradle-pvc
