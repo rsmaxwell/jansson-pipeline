@@ -36,6 +36,16 @@ spec:
     - mountPath: /root/.m2
       name: maven-data
 
+  - name: gradle
+    image: rsmaxwell/gradle:latest
+    command:
+    - cat
+    tty: true
+    volumeMounts:
+    - mountPath: /home/gradle
+      name: gradle-vol
+
+
 
   volumes:
   - name: maven-data
@@ -44,3 +54,6 @@ spec:
   - name: golang-data
     persistentVolumeClaim:
       claimName: golang-pvc
+  - name: gradle-vol
+    persistentVolumeClaim:
+      claimName: gradle-pvc
