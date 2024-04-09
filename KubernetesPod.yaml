@@ -25,7 +25,7 @@ spec:
     tty: true
     volumeMounts:
     - mountPath: /go/pkg
-      name: golang-vol
+      name: golang-data
 
   - name: maven
     image: maven:3.8.6-eclipse-temurin-17
@@ -33,20 +33,14 @@ spec:
     - cat
     tty: true
     volumeMounts:
-    - mountPath: /root/.m2/repository
-      name: maven-vol
     - mountPath: /root/.m2
-      name: maven-settings
-      readOnly: true
+      name: maven-data
+
 
   volumes:
-  - name: maven-vol
+  - name: maven-data
     persistentVolumeClaim:
       claimName: maven-pvc
-  - name: maven-settings
-    secret:
-      secretName: maven-settings
-      optional: false
-  - name: golang-vol
+  - name: golang-data
     persistentVolumeClaim:
       claimName: golang-pvc

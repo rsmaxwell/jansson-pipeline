@@ -29,26 +29,10 @@ pipeline {
           dir('project') {
             echo 'building the application'
             sh('../scripts/build.sh')
-          }
-        }
-      }
-    }
 
-    stage('test') {
-      steps {
-        container('tools') {
-          dir('project') {
             echo 'testing the application'
             sh('../scripts/test.sh')
-          }
-        }
-      }
-    }
 
-    stage('package') {
-      steps {
-        container('tools') {
-          dir('project') {
             echo 'packaging the application'
             sh('../scripts/package.sh')
           }
