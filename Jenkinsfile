@@ -32,9 +32,6 @@ pipeline {
 
             echo 'testing the application'
             sh('../scripts/test.sh')
-
-            echo 'packaging the application'
-            sh('../scripts/package.sh')
           }
         }
       }
@@ -44,6 +41,9 @@ pipeline {
       steps {
         container('maven') {
           dir('project') {
+            echo 'packaging the application'
+            sh('../scripts/package.sh')
+
             echo 'deploying the application'
             sh('../scripts/deploy.sh')
           }

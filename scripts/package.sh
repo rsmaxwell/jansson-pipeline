@@ -72,20 +72,6 @@ ZIPFILE=${ARTIFACTID}_${VERSION}.${PACKAGING}
 
 
 
-set -x
-
-id -a
-pwd
-
-echo "ls -al ${HOME}"
-ls -al ${HOME}
-
-echo "ls -al ${HOME}/.m2"
-ls -al ${HOME}/.m2
-
-echo "${HOME}/.m2/maven-repository-info"
-cat ${HOME}/.m2/maven-repository-info
-
 
 if [ -f ${HOME}/.m2/maven-repository-info ]; then
     . ${HOME}/.m2/maven-repository-info
@@ -100,7 +86,6 @@ fi
 
 MAVEN_REPOSITORY_URL="${MAVEN_REPOSITORY_BASE_URL}/${REPOSITORY}"
 
-set +x
 
 
 
