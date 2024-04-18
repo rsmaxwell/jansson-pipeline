@@ -6,7 +6,7 @@ PIPELINE_DIR=$(dirname $SCRIPT_DIR)
 PIPELINE_PACKAGE_DIR=${PIPELINE_DIR}/package
 PIPELINE_DOWNLOADS_DIR=${PIPELINE_DIR}/downloads
 
-. ${PIPELINE_PACKAGE_DIR}/info
+. ${BUILD_DIR}/buildinfo
 
 
 if [ -f ${HOME}/.m2/maven-repository-info ]; then

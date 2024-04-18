@@ -11,27 +11,8 @@ PROJECT_DIR=${PIPELINE_DIR}/project
 PROJECT_BUILD_DIR=${PROJECT_DIR}/src
 
 
-FAMILY=""
-ARCHITECTURE=""
-
-case "$(uname -s)" in
-    CYGWIN*) FAMILY="cygwin" ;;
-    Linux*) 
-        . /etc/os-release
-        case ${ID} in
-            ubuntu) FAMILY="linux" ;;
-            alpine) FAMILY="alpine" ;;
-            *) FAMILY="linux" ;;
-        esac
-        ;;
-    *) FAMILY="unknown" ;;
-esac
-
-case "$(uname -m)" in 
-  amd64|x86_64)   ARCHITECTURE="amd64" ;; 
-  *) ARCHITECTURE="x86" ;; 
-esac 
-
+. ${PROJECT_BUILD_DIR}/versioninfo
+. ${PROJECT_BUILD_DIR}/machineinfo
 
 
 if [ -z "${BUILD_ID}" ]; then
