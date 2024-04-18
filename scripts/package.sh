@@ -11,8 +11,8 @@ PROJECT_DIR=${PIPELINE_DIR}/project
 PROJECT_BUILD_DIR=${PROJECT_DIR}/src
 
 
-. ${PROJECT_BUILD_DIR}/versioninfo
-. ${PROJECT_BUILD_DIR}/machineinfo
+. ${PIPELINE_BUILD_DIR}/versioninfo
+. ${PIPELINE_BUILD_DIR}/machineinfo
 
 
 if [ -z "${BUILD_ID}" ]; then
