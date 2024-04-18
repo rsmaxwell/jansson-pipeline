@@ -43,7 +43,7 @@ cp ${PROJECT_BUILD_DIR}/jansson.h .
 cp ${PROJECT_BUILD_DIR}/jansson.def .
 
 
-PROJECT=jansson
+
 GROUPID="com.rsmaxwell.jansson"
 VERSION="${PACKAGE_VERSION}${SUFFIX}"
 ARTIFACTID=${PROJECT}_${FAMILY}_${ARCHITECTURE}
