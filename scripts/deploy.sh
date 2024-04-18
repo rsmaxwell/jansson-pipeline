@@ -8,6 +8,8 @@ PIPELINE_DIST_DIR=${PIPELINE_DIR}/dist
 
 . ${PIPELINE_BUILD_DIR}/versioninfo
 . ${PIPELINE_BUILD_DIR}/machineinfo
+. ${PIPELINE_PACKAGE_DIR}/buildinfo
+
 
 GROUPID=com.rsmaxwell.jansson
 ARTIFACTID=${PROJECT}_${FAMILY}_${ARCHITECTURE}
