@@ -9,6 +9,12 @@ PIPELINE_DIST_DIR=${PIPELINE_DIR}/dist
 . ${PIPELINE_BUILD_DIR}/versioninfo
 . ${PIPELINE_BUILD_DIR}/machineinfo
 
+set -x
+ip -a
+pwd
+ls -al /root/.m2
+cat /root/.m2/maven-repository-info
+set +x
 
 if [ -f ${HOME}/.m2/maven-repository-info ]; then
     . ${HOME}/.m2/maven-repository-info
