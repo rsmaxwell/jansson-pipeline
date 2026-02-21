@@ -4,6 +4,16 @@ pipeline {
       yamlFile 'KubernetesPod.yaml'
     }
   }
+
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+  }
+
+  environment {
+    FAMILY = 'linux'
+    ARCHITECTURE = 'amd64'
+  }
+
   stages {
 
     stage('prepare') {
